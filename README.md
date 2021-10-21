@@ -1,2 +1,2 @@
 # Projet Académique :
-Regroupe les projet que j'ai réalisé dans le cadre de mes études à ESIEE Paris
+Les différents projets informatiques que j'ai réalisés au cours de mes études sont réunis ici.
