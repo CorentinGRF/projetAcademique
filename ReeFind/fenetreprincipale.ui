@@ -1,0 +1,1412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FenetrePrincipale</class>
+ <widget class="QWidget" name="FenetrePrincipale">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1014</width>
+    <height>524</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Calibri</family>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>ReeFind</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="tabPosition">
+      <enum>QTabWidget::West</enum>
+     </property>
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>16</width>
+       <height>16</height>
+      </size>
+     </property>
+     <property name="usesScrollButtons">
+      <bool>false</bool>
+     </property>
+     <widget class="QWidget" name="ongletRechercher">
+      <attribute name="title">
+       <string>&amp;Rechercher</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="4">
+        <widget class="QPushButton" name="R_BoutonRecherche">
+         <property name="text">
+          <string>Rechercher</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="4" rowspan="2">
+        <widget class="QGroupBox" name="R_GB_Indexage">
+         <property name="title">
+          <string>Gestion de l'indexage</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item>
+           <widget class="QPushButton" name="R_BoutonIndexage">
+            <property name="text">
+             <string>Réaliser un indexage</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QListView" name="R_ListViewIndexage">
+            <property name="editTriggers">
+             <set>QAbstractItemView::NoEditTriggers</set>
+            </property>
+            <property name="selectionMode">
+             <enum>QAbstractItemView::ExtendedSelection</enum>
+            </property>
+            <property name="selectionRectVisible">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="R_BoutonReinitialiserDossier">
+            <property name="text">
+             <string>Réinitialiser les dossiers à indexer</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="R_BoutonRetirerDossier">
+            <property name="text">
+             <string>Retirer un dossier à indexer</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="R_BoutonAjouterDossier">
+            <property name="text">
+             <string>Ajouter un dossier à indexer</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLineEdit" name="R_LineEditRechercher">
+         <property name="placeholderText">
+          <string>Texte à chercher</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" rowspan="3">
+        <widget class="QListView" name="R_ListViewResultat">
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="4">
+        <widget class="QCheckBox" name="R_CheckBoxCasse">
+         <property name="text">
+          <string>Prendre en compte la casse</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QPushButton" name="R_BoutonOuvrirDossier">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="text">
+          <string>Ouvrir le fichier</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="4">
+        <widget class="QCheckBox" name="R_CheckBoxOuvrir">
+         <property name="text">
+          <string>Toujours ouvir le dossier</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="ongletTrier">
+      <attribute name="title">
+       <string>&amp;Trier</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="3">
+        <widget class="QPushButton" name="T_BoutonChoisir">
+         <property name="text">
+          <string>Choisir</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" colspan="3">
+        <widget class="QLineEdit" name="T_LineEditTrier">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="placeholderText">
+          <string>Dossier à trier</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QGroupBox" name="T_GB_Nom">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="title">
+          <string>Gestion du tri des noms :</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLabel" name="T_LabelNLettre">
+            <property name="text">
+             <string>Prendre en compte n lettres :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="T_SpinBoxNLettre">
+            <property name="suffix">
+             <string/>
+            </property>
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>1903</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="T_LabelPlageLettre">
+            <property name="text">
+             <string>Plage de n lettres :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="T_SpinBoxPlageLettre">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>1905</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="2" column="3" rowspan="2" colspan="2">
+        <widget class="QGroupBox" name="T_GB_Generale">
+         <property name="title">
+          <string>Généralité :</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <item>
+           <widget class="QCheckBox" name="T_CheckBoxSD">
+            <property name="text">
+             <string>Trier dans les sous-dossiers</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="T_CheckBoxCP">
+            <property name="text">
+             <string>Trier dans une copie</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="T_LabelNbrElement">
+            <property name="text">
+             <string>Créer un dossier à partir de n élément :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="T_SpinBoxNbrElement">
+            <property name="minimum">
+             <number>1</number>
+            </property>
+            <property name="maximum">
+             <number>1905</number>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <widget class="QPushButton" name="T_BoutonTrier">
+         <property name="text">
+          <string>Trier</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QGroupBox" name="T_GB_Poid">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="title">
+          <string>Gestion du tri des poids :</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QLabel" name="T_LabelEchelle">
+            <property name="text">
+             <string>Choix de l'échelle :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="T_RadioButtonLineaire">
+            <property name="text">
+             <string>Échelle linéaire</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="T_RadioButtonLogarithme">
+            <property name="text">
+             <string>Échelle logarithmique</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="T_LabelPlagePoid">
+            <property name="text">
+             <string>Taille des plages :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QDoubleSpinBox" name="T_SpinBoxPlagePoid">
+            <property name="decimals">
+             <number>3</number>
+            </property>
+            <property name="minimum">
+             <double>0.001000000000000</double>
+            </property>
+            <property name="maximum">
+             <double>2000000.000000000000000</double>
+            </property>
+            <property name="value">
+             <double>1.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_4">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="3" colspan="2">
+        <widget class="QPushButton" name="T_BoutonSSD">
+         <property name="text">
+          <string>Supprimer les sous dossiers</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2" rowspan="3">
+        <widget class="QGroupBox" name="T_GB_Age">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="title">
+          <string>Gestion du tri des âges :</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <widget class="QLabel" name="T_LabelAge">
+            <property name="text">
+             <string>Trier en fonction de :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="T_RadioButtonDecennie">
+            <property name="text">
+             <string>Décennie</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="T_RadioButtonAnnee">
+            <property name="text">
+             <string>Année</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="T_RadioButtonMois">
+            <property name="text">
+             <string>Mois</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="T_RadioButtonJour">
+            <property name="text">
+             <string>Jour</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="T_RadioButtonHeure">
+            <property name="text">
+             <string>Heure</string>
+            </property>
+            <property name="autoExclusive">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="1" rowspan="2">
+        <widget class="QGroupBox" name="T_GB_Extension">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="title">
+          <string>Gestion du tri des extensions :</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QLabel" name="T_LabelExtension">
+            <property name="text">
+             <string>Extension à trier :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="T_ComboBoxExtension">
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+            <item>
+             <property name="text">
+              <string>Toutes</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">, *.png, *.jpg, *.xpm</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">, *.mp4, *.wav</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">, *.txt</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0" rowspan="2">
+        <widget class="QGroupBox" name="T_GB_ModeTrie">
+         <property name="title">
+          <string>Trier les fichiers en fonction de leur :</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QRadioButton" name="T_RadioButtonNom">
+            <property name="text">
+             <string>Nom</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="T_RadioButtonExtension">
+            <property name="text">
+             <string>Extension</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="T_RadioButtonPoid">
+            <property name="text">
+             <string>Poids</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="T_RadioButtonAge">
+            <property name="text">
+             <string>Âge</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="ongletRenommer">
+      <attribute name="title">
+       <string>Re&amp;nommer</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="1" column="2">
+        <widget class="QGroupBox" name="N_GB_Extension">
+         <property name="title">
+          <string>Gestion des extensions :</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_10">
+          <item>
+           <widget class="QLabel" name="N_LabelExtension">
+            <property name="text">
+             <string>Type de fichier à renommer</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="N_ComboBoxExtension">
+            <property name="editable">
+             <bool>true</bool>
+            </property>
+            <item>
+             <property name="text">
+              <string>Toutes</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>, *.txt</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>, *.mp4, *.wav</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>, *.png, *.jpg, *.xpm</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_9">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QGroupBox" name="N_GB_PSFix">
+         <property name="title">
+          <string>Gestion des préfixes/suffixes :</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_9">
+          <item>
+           <widget class="QLabel" name="N_LabelPrefixe">
+            <property name="text">
+             <string>Préfixe</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="N_CheckBox_Prefixe">
+            <property name="text">
+             <string>Ajouter un préfixe</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="N_LineEditPrefixe">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="placeholderText">
+             <string>Préfixe</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="N_LabelSufix">
+            <property name="text">
+             <string>Suffixe</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="N_CheckBoxSufixe">
+            <property name="text">
+             <string>Ajouter un suffixe</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="N_LineEditSufixe">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="placeholderText">
+             <string>Suffixe</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_8">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_8">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="5">
+        <widget class="QPushButton" name="N_BoutonRenommer">
+         <property name="text">
+          <string>Renommer</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <widget class="QPushButton" name="N_BoutonChoisir">
+         <property name="text">
+          <string>Choisir</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" colspan="4">
+        <widget class="QLineEdit" name="N_LineEditRenommer">
+         <property name="placeholderText">
+          <string>Dossier contenant les éléments à renommer</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="4" colspan="2">
+        <widget class="QGroupBox" name="groupBox">
+         <property name="title">
+          <string>Généralité :</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_11">
+          <item>
+           <widget class="QCheckBox" name="N_CheckBoxNomActuel">
+            <property name="text">
+             <string>Utiliser le nom actuel du fichier</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="N_CheckBoxNoSDir">
+            <property name="text">
+             <string>Renommer directement dans le dossier</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_10">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QGroupBox" name="N_GB_Age">
+         <property name="title">
+          <string>Gestion des âges :</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <item>
+           <widget class="QCheckBox" name="N_CheckBoxAge">
+            <property name="text">
+             <string>Ajouter l'âge</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="N_GB_SelectAge">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="title">
+             <string>Renommer avec :</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_12">
+             <item>
+              <widget class="QCheckBox" name="N_CheckBoxAnnee">
+               <property name="text">
+                <string>Année</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="N_CheckBoxMois">
+               <property name="text">
+                <string>Mois</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="N_CheckBoxJour">
+               <property name="text">
+                <string>Jour</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="N_CheckBoxHeure">
+               <property name="text">
+                <string>Heure</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="N_CheckBoxPerso">
+               <property name="text">
+                <string>Personalisé</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="N_LineEditPerso">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="placeholderText">
+                <string>Format personalisé</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="ongletRetR">
+      <attribute name="title">
+       <string>Re&amp;chercher &amp;&amp; Remplacer</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="1" column="2" rowspan="3">
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="title">
+          <string>Option</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_6">
+          <item row="0" column="0" colspan="2">
+           <widget class="QPushButton" name="C_BoutonRemplacer">
+            <property name="text">
+             <string>Remplacer</string>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="0" colspan="2">
+           <widget class="QCheckBox" name="C_CheckBoxSD">
+            <property name="text">
+             <string>Sous-dossier</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QPushButton" name="C_BoutonPrecedent">
+            <property name="text">
+             <string>Précédent</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="QPushButton" name="C_BoutonRemplacerAllInDoc">
+            <property name="text">
+             <string>Remplacer tout dans le document</string>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="0" rowspan="2" colspan="2">
+           <widget class="Line" name="line">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0" colspan="2">
+           <widget class="QPushButton" name="C_BoutonRemplacerAll">
+            <property name="text">
+             <string>Remplacer tout</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="0" colspan="2">
+           <spacer name="verticalSpacer_11">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="6" column="0" colspan="2">
+           <widget class="QCheckBox" name="C_CheckBoxCasse">
+            <property name="text">
+             <string>Prendre en compte la casse</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QPushButton" name="C_BoutonSuivant">
+            <property name="text">
+             <string>Suivant</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0" colspan="2">
+           <widget class="Line" name="line_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="0" colspan="2">
+           <widget class="QCheckBox" name="C_CheckBoxMot">
+            <property name="text">
+             <string>Uniquement des mots complets</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLineEdit" name="C_LineEditTextToSearch">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="placeholderText">
+          <string>Texte à rechercher</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QPushButton" name="C_BoutonChoisir">
+         <property name="text">
+          <string>Choisir</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="C_LineEditReplace">
+         <property name="placeholderText">
+          <string>Texte de remplacement</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" colspan="2">
+        <widget class="QLineEdit" name="C_LineEditRetR">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="placeholderText">
+          <string>Répertoire contenant </string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <widget class="QTextEdit" name="C_TextEditRetR">
+         <property name="mouseTracking">
+          <bool>true</bool>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::ClickFocus</enum>
+         </property>
+         <property name="tabChangesFocus">
+          <bool>true</bool>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+         <property name="html">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Calibri'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+         <property name="textInteractionFlags">
+          <set>Qt::NoTextInteraction</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>R_LineEditRechercher</tabstop>
+  <tabstop>R_BoutonRecherche</tabstop>
+  <tabstop>R_ListViewResultat</tabstop>
+  <tabstop>R_CheckBoxCasse</tabstop>
+  <tabstop>R_BoutonIndexage</tabstop>
+  <tabstop>R_ListViewIndexage</tabstop>
+  <tabstop>R_BoutonReinitialiserDossier</tabstop>
+  <tabstop>R_BoutonRetirerDossier</tabstop>
+  <tabstop>R_BoutonAjouterDossier</tabstop>
+  <tabstop>T_LineEditTrier</tabstop>
+  <tabstop>T_BoutonChoisir</tabstop>
+  <tabstop>T_BoutonTrier</tabstop>
+  <tabstop>T_RadioButtonNom</tabstop>
+  <tabstop>T_RadioButtonExtension</tabstop>
+  <tabstop>T_RadioButtonPoid</tabstop>
+  <tabstop>T_RadioButtonAge</tabstop>
+  <tabstop>T_SpinBoxNLettre</tabstop>
+  <tabstop>T_SpinBoxPlageLettre</tabstop>
+  <tabstop>T_ComboBoxExtension</tabstop>
+  <tabstop>T_RadioButtonLineaire</tabstop>
+  <tabstop>T_RadioButtonLogarithme</tabstop>
+  <tabstop>T_SpinBoxPlagePoid</tabstop>
+  <tabstop>T_RadioButtonDecennie</tabstop>
+  <tabstop>T_RadioButtonAnnee</tabstop>
+  <tabstop>T_RadioButtonMois</tabstop>
+  <tabstop>T_RadioButtonJour</tabstop>
+  <tabstop>T_RadioButtonHeure</tabstop>
+  <tabstop>T_CheckBoxSD</tabstop>
+  <tabstop>N_BoutonRenommer</tabstop>
+  <tabstop>N_LineEditRenommer</tabstop>
+  <tabstop>N_BoutonChoisir</tabstop>
+  <tabstop>T_CheckBoxCP</tabstop>
+  <tabstop>T_SpinBoxNbrElement</tabstop>
+  <tabstop>tabWidget</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>N_CheckBoxSufixe</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>N_LineEditSufixe</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>119</x>
+     <y>197</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>125</x>
+     <y>217</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>N_CheckBoxPerso</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>N_CheckBoxAnnee</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>433</x>
+     <y>256</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>388</x>
+     <y>146</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>N_CheckBoxPerso</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>N_CheckBoxHeure</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>330</x>
+     <y>251</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>334</x>
+     <y>239</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>N_CheckBoxAge</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>N_GB_SelectAge</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>333</x>
+     <y>96</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>337</x>
+     <y>122</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>N_CheckBoxPerso</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>N_CheckBoxMois</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>412</x>
+     <y>256</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>402</x>
+     <y>181</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>R_LineEditRechercher</sender>
+   <signal>returnPressed()</signal>
+   <receiver>R_BoutonRecherche</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>494</x>
+     <y>31</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>571</x>
+     <y>34</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>T_RadioButtonAge</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>T_GB_Age</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>185</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>641</x>
+     <y>224</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>T_LineEditTrier</sender>
+   <signal>returnPressed()</signal>
+   <receiver>T_BoutonTrier</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>117</x>
+     <y>32</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>936</x>
+     <y>36</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>T_RadioButtonNom</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>T_GB_Nom</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>241</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>182</x>
+     <y>503</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>T_RadioButtonPoid</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>T_GB_Poid</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>158</x>
+     <y>157</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>473</x>
+     <y>503</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>N_CheckBoxPerso</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>N_CheckBoxJour</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>370</x>
+     <y>259</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>367</x>
+     <y>211</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>N_LineEditRenommer</sender>
+   <signal>returnPressed()</signal>
+   <receiver>N_BoutonRenommer</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>680</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>954</x>
+     <y>35</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>N_CheckBoxPerso</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>N_LineEditPerso</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>385</x>
+     <y>262</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>392</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>T_RadioButtonExtension</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>T_GB_Extension</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>215</x>
+     <y>129</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>473</x>
+     <y>88</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>N_CheckBox_Prefixe</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>N_LineEditPrefixe</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>98</x>
+     <y>109</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>99</x>
+     <y>137</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>C_LineEditRetR</sender>
+   <signal>returnPressed()</signal>
+   <receiver>C_BoutonSuivant</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>699</x>
+     <y>30</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>949</x>
+     <y>180</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>C_LineEditTextToSearch</sender>
+   <signal>returnPressed()</signal>
+   <receiver>C_BoutonSuivant</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>360</x>
+     <y>68</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>930</x>
+     <y>177</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
